@@ -13,7 +13,8 @@ st.set_page_config(
 )
 
 # Load data
-df = pd.read_csv("bike_sample.csv")
+df = pd.read_csv("Pyfiles/bike_sample.csv", parse_dates=["date"])
+
 
 # Sidebar navigation
 st.sidebar.title("NYC CitiBike Dashboard")
@@ -50,7 +51,7 @@ if page == "Intro":
 
     # Intro image
     st.image(
-        "Citi_Bike_image.jpg.webp",
+        "Pyfiles/Citi_Bike_image.jpg.webp",
         caption="Source: Citi Bike NYC Trip Data (2022) and NOAA Weather Data (2022)",
         use_column_width=True
     )
@@ -68,6 +69,7 @@ if page == "Intro":
     </div>
     """, unsafe_allow_html=True)
 
+# 2
 
 elif page == "Trip Count & Temperature Relationship":
     from plotly.subplots import make_subplots
@@ -253,9 +255,10 @@ elif page == "Top Start Stations":
 
 elif page == "Interactive Map":
     st.header("Mapping City's Bike Activity")
+    st.subheader("Visualizing commuter flow and station hotspots across Jersey City and Hoboken.")
 
     # Path to your exported HTML map
-    map_path = "/Users/emilsafarov/Library/CloudStorage/OneDrive-Personal/CF/CF_S2/nyc_citibike_dashboard/Pyfiles/nyc_bike_map_v2.html"
+    map_path = "Pyfiles/nyc_bike_map_v2.html"
 
     try:
         with open(map_path, "r") as f:
@@ -264,8 +267,12 @@ elif page == "Interactive Map":
         # Render map in Streamlit
         html(map_html, height=800)
 
+        # Optional caption
+        st.caption("Source: Kepler.gl map of 2022 Citibike trip data.")
+
     except FileNotFoundError:
         st.error(f"Map file not found at: `{map_path}`. Please double-check the path.")
+
 
 
 # 6 
