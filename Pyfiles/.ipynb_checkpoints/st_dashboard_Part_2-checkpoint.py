@@ -28,7 +28,7 @@ page = st.sidebar.selectbox("Choose a page", [
 ])
 
 
-# 1 introduction page + photo
+# 1 introduction page
 
 if page == "Intro":
     # Main heading
@@ -49,13 +49,6 @@ if page == "Intro":
     - Visualize city-wide bike usage patterns using an interactive map  
     """)
 
-    # Intro image
-    st.image(
-        "Pyfiles/Citi_Bike_image.jpg.webp",
-        caption="Source: Citi Bike NYC Trip Data (2022) and NOAA Weather Data (2022)",
-        use_column_width=True
-    )
-
     # Horizontal line
     st.markdown("---")
 
@@ -68,6 +61,7 @@ if page == "Intro":
         💻 <a href='https://github.com/ezsafarov'>GitHub</a>
     </div>
     """, unsafe_allow_html=True)
+
 
 # 2
 
