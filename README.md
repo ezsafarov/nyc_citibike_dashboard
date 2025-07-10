@@ -29,7 +29,6 @@ This interactive Streamlit dashboard analyzes Citibike trip and weather data fro
 ## 🚀 Live Dashboard
 
 👉 [View the Streamlit App](https://your-app-name.streamlit.app)  
-*(Replace with your actual deployed URL)*
 
 ---
 
